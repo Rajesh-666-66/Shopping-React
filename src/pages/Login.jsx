@@ -85,7 +85,8 @@ const Login = () => {
        </NavLinkdiv>
         </Form>
       </Wrapper>
-    </Container>
+    </Container> 
+    
   );
 };
 
