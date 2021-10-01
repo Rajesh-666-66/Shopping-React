@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
+  background-color:#fff;
   ${mobile({ height: "50px" })}
 `;
 
@@ -82,11 +83,14 @@ const Navbar = () => {
     function cart(){
     history.push("/cart");
     }
+    function home(){
+    history.push("/Home");
+    }
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
+          <Language onClick={home}>HOME</Language>
           <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />

@@ -6,6 +6,7 @@ import Categories from '../componants/Categories'
 import Products from '../componants/Products'
 import Newsletter from '../componants/Newsletter'
 import Footer from '../componants/Footer'
+import { Offers } from '../componants/Offers'
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
         <Announcement/>
           <Navbar/>
           <Slider/>
+          <Offers/>
           <Categories/>
           <Products/>
           <Newsletter/>

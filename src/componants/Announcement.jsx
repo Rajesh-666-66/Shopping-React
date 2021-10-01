@@ -13,8 +13,8 @@ font-weight: 500;
 
  const Announcement = () => {
     return (
-        <Container>
-            Super deal! free shipping on orders over $50
+        <Container >
+            <marquee scrollamount="5" loop="infinite">Super deal! free shipping on orders over $50</marquee>
         </Container>
     )
 }
