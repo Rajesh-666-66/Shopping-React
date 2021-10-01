@@ -3,6 +3,7 @@ import {
     SearchOutlined,
     ShoppingCartOutlined,
   } from "@material-ui/icons";
+import { useHistory } from "react-router";
   import styled from "styled-components";
   
   const Info = styled.div`
@@ -66,8 +67,12 @@ import {
   `;
   
   const Product = ({ item }) => {
+    let history = useHistory();
+    function productView(){
+      history.push("/Product");
+    }
     return (
-      <Container bg={item.bg}>
+      <Container bg={item.bg}  onClick={productView}>
         <Circle />
         <Image src={item.img} />
         <Info>

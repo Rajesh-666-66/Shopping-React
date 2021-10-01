@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {mobile} from "../responsive";
 import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Container = styled.div`
   width: 100vw;
@@ -61,28 +62,39 @@ const Link = styled.a`
 const NavLinkdiv = styled.div`
 font-size: 2vh;
 margin: 2px;
+color: black;
+`;
+const DisErr = styled.div`
+color: red;
+font-size: 12px;
 `;
 
 const Login = () => {
 
   let history = useHistory();
-  function Login(){
-   history.push("/Home");
-  }
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+const onSubmit = (data) => {
+  console.log(data)
+  history.push("/Home");
+}
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button onClick={ Login }>LOGIN</Button>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Input type="text" placeholder="username" {...register('username', { required: true })} />
+         <DisErr> {errors.username && <p>Username is required</p>} </DisErr>
+          <Input type="password" placeholder="password" {...register('password', { required: true })} />
+          <DisErr> {errors.password && <p>Password is required</p>} </DisErr>
+          <Button type="submit">LOGIN</Button>
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
-          <NavLinkdiv>
-       <NavLink to="/home"> i will do it later</NavLink>
-       </NavLinkdiv>
+           <NavLink to="/home"><NavLinkdiv>I WILL DO IT LATER </NavLinkdiv></NavLink>
+      
         </Form>
       </Wrapper>
     </Container> 

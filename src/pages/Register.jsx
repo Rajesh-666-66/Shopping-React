@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Container = styled.div`
   width: 100vw;
@@ -19,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 40%;
+  width: 30%;
   padding: 20px;
   background-color: white;
   ${mobile({ width: "75%" })}
@@ -32,7 +33,7 @@ const Title = styled.h1`
 
 const Form = styled.form`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
@@ -57,43 +58,75 @@ const Button = styled.button`
 `;
 
 const NavLinkdiv = styled.div`
-font-size: 2vh;
-margin: 2px;
+  font-size: 2vh;
+  margin: 2px;
+`;
+
+const DisErr = styled.span`
+  color: red;
+  font-size: 12px;
 `;
 
 const Register = () => {
-
   let history = useHistory();
-   function RegisterUser(){
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
     history.push("/Home");
-   }
+  };
   return (
     <div>
-    <form>
-    <Container>
-      <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
-        <Form >
-          <Input type="text"  placeholder="name" required  />
-          <Input placeholder="last name" required  />
-          <Input placeholder="username" required  />
-          <Input type="email" placeholder="email" required  />
-          <Input placeholder="password" required  />
-          <Input placeholder="confirm password" required  />
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
-          <Button  onClick={ RegisterUser }>CREATE</Button>
-        </Form>
-        <NavLinkdiv>
-       <NavLink to="/home"> i will do it later</NavLink>
-       </NavLinkdiv>
-      </Wrapper>
-     
-    </Container>
-   
-    </form>
+      <Container>
+        <Wrapper>
+          <Title>CREATE AN ACCOUNT</Title>
+          <Form onSubmit={handleSubmit(onSubmit)}>
+           <Input
+              type="text"
+              placeholder="First Name"
+              {...register("name", { required: true })}
+            /> 
+            <DisErr> {errors.name && <p>Name is required</p>} </DisErr>
+            <Input
+              type="text"
+              placeholder="Last Name"
+              {...register("lastname", { required: true })}
+            />
+            <DisErr> {errors.lastname && <p>Lastname is required</p>} </DisErr>
+            <Input
+              type="text"
+              placeholder="Username"
+              {...register("username", { required: true })}
+            />
+            <DisErr> {errors.username && <p>Username is required</p>} </DisErr>
+            <Input
+              type="email"
+              type="email"
+              placeholder="Email"
+              {...register("email", { required: true })}
+            />
+            <DisErr> {errors.email && <p>Email is required</p>} </DisErr>
+            <Input
+              type="password"
+              placeholder="Password"
+              {...register("password", { required: true })}
+            />
+            <DisErr> {errors.password && <p>Password is required</p>} </DisErr>
+            <Agreement>
+              By creating an account, I consent to the processing of my personal
+              data in accordance with the <b>PRIVACY POLICY</b>
+            </Agreement>
+            <Button type="submit">CREATE</Button>
+          </Form>
+          <NavLinkdiv>
+            <NavLink to="/home"> i will do it later</NavLink>
+          </NavLinkdiv>
+        </Wrapper>
+      </Container>
     </div>
   );
 };

@@ -4,7 +4,7 @@ export const sliderItems = [
       img: "https://i.ibb.co/cXFnLLV/3.png",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "#E5F9EB",
+      bg: "#fcf5f5",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ export const sliderItems = [
       img: "https://purepng.com/public/uploads/large/purepng.com-women-shoppingwomenpeoplepersonsfemaleshopping-1121525085526vxpnm.png",
       title: "TRENDING STYLES",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "#E5F3F9",
+      bg: "#E5F9EB",
     },
   ];
 
