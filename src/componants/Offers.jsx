@@ -7,11 +7,14 @@ const Container = styled.div`
 width: 100%;
 display: flex;
 background-color: white;
+padding-left: 18px;
+padding-right: 18px;
 `;
 const OfferImage = styled.img`
 width: 100%;
 height: 100%;
 object-fit: cover;
+
 `;
 
 export const Offers = () => {

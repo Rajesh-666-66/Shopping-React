@@ -79,7 +79,7 @@ export const sliderItems = [
     },
     {
       id:7,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+      img:"https://freepngimg.com/thumb/shoes/21932-9-red-high-heel-shoes.png",
       bg: "#E5F9EB",
     },
     {
@@ -119,7 +119,7 @@ export const sliderItems = [
     },
     {
       id:15,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+      img:"https://freepngimg.com/thumb/tshirt/95012-monster-cup-athletic-series-energy-nascar-tshirt.png",
       bg: "#fcf5f5",
     },
     {

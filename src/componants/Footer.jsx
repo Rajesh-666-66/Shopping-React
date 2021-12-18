@@ -12,6 +12,8 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  /* color: #94969f; */
+  font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   ${mobile({ flexDirection: "column" })}
 `;
 
@@ -26,6 +28,9 @@ const Logo = styled.h1``;
 
 const Desc = styled.p`
   margin: 20px 0px;
+  color: #94969f;
+  font-size: 15px;
+  font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 `;
 
 const SocialContainer = styled.div`
@@ -89,9 +94,9 @@ const Footer = () => {
       <Left>
         <Logo>SHOPEE</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+        If you would like to experience the best of online shopping for men, women and kids in India, you are at the right place.
+         Shopee is the ultimate destination for fashion and lifestyle, being host to a wide array of merchandise including 
+         clothing, footwear, accessories, jewellery, personal care products and more.
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -113,7 +118,7 @@ const Footer = () => {
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
+          <ListItem>Man Fashion<p className="new">New</p></ListItem>
           <ListItem>Woman Fashion</ListItem>
           <ListItem>Accessories</ListItem>
           <ListItem>My Account</ListItem>

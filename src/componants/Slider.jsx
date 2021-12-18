@@ -73,9 +73,7 @@ cursor: pointer;
  `;
 
 function Slider() {
-
-  let history = useHistory();
- 
+  
 const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
 if(direction==="left"){
